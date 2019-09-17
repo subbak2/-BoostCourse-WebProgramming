@@ -15,10 +15,12 @@
  var a = [];
  var a = [1,2,3,"hello",[]];
 
-3. 자바스크립트 객체
- - key, value 구조의 자료구조, {}로 표현함
-
-var obj = { name : "crong", age : 20} 
-
-console.log(obj["name"]);
-console.log(obj.age);
+메소드들
+ - push, indexOf, join, slice,concat
+ 
+배열관련
+ - foreach,map, filter
+var newArr = ["apple","tomato"].map(function(value, index) {
+   return index + "번째 과일은 " + value + "입니다";
+});
+console.log(newArr)// 여러분들이 실행해보세요
