@@ -1,0 +1,11 @@
+4. WebAnimation
+ - CSS transition과 transform 속성을 사용한 구현
+ - fps 매끄러운 애니메이션 60fps -> 1000ms / 60fps = 16.666ms 당 한 번 하는게 이상적
+ --> 간단한 것 CSS, 세밀한 조작 -> JavaScript
+
+ - JavvaScript 
+    - setInterval
+	하다가 6분부터 다시	
+    - setTimeout
+    - requestAnimationframe
+    - Animations API
