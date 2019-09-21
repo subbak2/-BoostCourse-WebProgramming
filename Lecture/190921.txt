@@ -1,0 +1,21 @@
+4. WebAnimation
+ - CSS transition과 transform 속성을 사용한 구현
+ - fps 매끄러운 애니메이션 60fps -> 1000ms / 60fps = 16.666ms 당 한 번 하는게 이상적
+ --> 간단한 것 CSS, 세밀한 조작 -> JavaScript
+
+ - JavvaScript 
+    - setInterval
+      
+      코드 예시]
+      const interval = window.setInterval(()=> {
+      console.log('현재시각은', new Date());
+      },1000/60);
+      window.clearInterval(interval);
+    
+    그러나 setInterval은 interval을 정해도 정확하게 실행이 되지 않음
+    -> javascript envent queue에 있는 다른 함수가 간섭가능
+    
+    
+    - setTimeout
+    - requestAnimationframe
+    - Animations API
