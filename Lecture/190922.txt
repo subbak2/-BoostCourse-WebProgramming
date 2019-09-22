@@ -1,0 +1,36 @@
+5. WEB UI
+ - 폴더 구성, script를 html 태그를 읽고 나서
+ - DOMContentLoaded"를 통해서 DOM의 모든 구성요소가 Load된 다음에 JavaScript를 실행
+ - Event Bubbling 
+    ul.addEventListener("click",function(evt) {
+    console.log(evt.currentTarget, evt.target);
+    });
+    라는 코드가 있을때
+    만약 ul > li > img 태그를 클릭했다면 어떤 결과가 나올까요?
+    그 전에 이벤트는 실행은 될까요?
+    정답은 '네' 입니다. 
+    li 나 img 태그는 ul 태그에 속하기도 합니다.
+    따라서 UL에 등록한 이벤트 리스너도 실행이 됩니다. 
+    
+    이것은 이벤트 버블링이라고 합니다.
+    클릭한 지점이 하위엘리먼트라고 하여도, 그것을 감싸고 있는 상위 엘리먼트까지 올라가면서 이벤트리스너가 있는지 찾는 과정입니다. 
+    만약 img, li, ul에 각각 이벤트를 등록했었다면, 3개의 이벤트 리스너가 실행했을 겁니다. 
+    가장 안 쪽이 3일 경우 3->2->1 순서로 EventListne가 실행됨
+
+    비슷하게 Capturing이라는 것도 있습니다. 반대로 이벤트가 발생하는 것인데요.
+    기본적으로는 Bubbling 순서로 이벤트가 발생합니다.
+    따라서 Bubbling을 잘 기억해두는 게 좋습니다.
+    Capturing 단계에서 이벤트 발생을 시키고 싶다면 addEventListener 메서드의 3번째 인자에 값을 true로 주면 됩니다. 
+    (잘 쓰이지 않음)
+    
+ - EventDelegation (위임)
+   상위 노드에서 하위 노드로 Event를 위임하는 방식
+   Ex> if(evt.target.tagName == "IMG"){
+          log.innerHTML = "clicked" + evt.target.src;
+       else if (evt.target.tagName == "LI") {
+          log.innerHTML = "clicked" + evt.target.firstChild.src;
+       }
+       
+    
+    
+    
