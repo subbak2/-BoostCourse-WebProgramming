@@ -78,4 +78,44 @@
     document.querySelector(".content").innerHTML = resultHTML;
     
    
+6. Tab UI
+ - 전체 구조를 먼저 생각
+ - Ex> div class "tab" 으로 먼저 만들고
+           아래 div에 N개의 tabmenu를 만들어줌
+           하위에 section을 통해 contents를 담음
+           Event + Ajax로 contents를 넣기
+  - Ex> 
+   function makeTamplate(data){
+     var html = document.getElementById("tabcontent")
+     .innerHTML;
+     var resultHTML = "";
+     for(var i=0, len = data.length; i<len; i++){
+       resultHTML += html.replace("{name}", data[i].name)
+                     .replace("{favorites}", data[i].favorites);
+     }
+   }
+   
+   function sendAjax(url){
+     var oReq = new XMLHttpRequest();
+     oReq.addEventListner("load", ()=>{
+       // console.log(oReq.responseText);
+       var data = JSON.parse(oReq.responseText);
+       makeTemplate(data);
+     });
+     oReq.open("GET", url);
+     oReq.send();
+   }
+   
+   var tabmenu = document.querySelector(",tabmenu");
+   tabmenu.addEventListner("click", ()=>
+    sendAjax("./json.txt");
+   });
+   
+      
+      
+    --> HTML 내부에
     
+    <srcipt id="tabcontent" type = "my-template">
+      <ht> hello {name}</h4>
+      <p>{favorites}</p>
+    </script>
