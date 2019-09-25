@@ -1,0 +1,22 @@
+7. Spring Core
+ 1) Spring이란?
+    - Enterprise Application을 구축할 수 있는 가벼운 솔루션
+    - 원하는 부분만 가져다 사용할 수 있도록 모듈화 되어있음
+    - IoC 컨테이너
+    - 선언적으로 트랜잭션을 관리할 수 있다.
+    - 완전한 기능을 갖춘 MVC Framework를 제공한다.
+    - AOP 지원
+    - 스프링 도메인 논리코드와 쉽게분리
+    - 약 20개의 모듈
+    - Messaging - Spring MVC 어노테이션과 유사
+    - Data Access / Integration
+      -> spring-jdbc / spring-tx / spring-web / spring-webmvc
+
+  2) Spring IoC/DI 컨테이너
+     - Container : 인스턴스의 생명주기를관리, 생성된 인스턴스들에게 추가적인 기능을 제공
+     - Ex> WAS가 Servlet을 메모리에올리고 실행하는 것은 Servlet Container가관리함
+     - IoC(Inversion of Container) 제어의 역전 / 프로그램흐름을 제어하는게 다른 프로그램
+     - Dependency Injection
+     - DI는 클래스사이의 의존관계를 Bean 설정 정보를 바탕으로 컨테이너가 자동으로 연결, 의존성 주입
+        - Bean Factory 와 Application Context
+   
