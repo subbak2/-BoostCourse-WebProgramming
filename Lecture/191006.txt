@@ -9,7 +9,31 @@
       - Transaction 
         - 하나의 논리적인 동작
           1) 원자성 - 전체가 성공하거나 실패하는 것을 의미함
-          2) 
+          2) 일관성 - 작업 처리 결과가 일관성 있어야함
+          3) 독립성 - 둘 이상의 트랜잭션이 동시에 병행 실행되고 있을 경우 서로 연산에 끼여들 수 없다.
+          4) 지속성 - 트랜잭션이 성공적으로 처리 됐을 경우 결과가 영구적이어야 함
+                   - JDBC의 Connection 객체 setAutoCommit메소드가 기본적으로 true로 설정됨
+                     false로 Parameter를 지정한 실제 실행이 됐을때 commit()하면 됨
+                   - Sprng에서는 @EnableTransactionManagement를 이용하면, Java Config에서
+                     트랜잭션을 활성화할 수 있음 --> 실습 해보기 
+                  
+    -Presentation Layer / Service Layer / Repository Layer로 Architecture를 구성함
+      -> 재사용 효율이 아주 높음
+      -> 설정을 분리해야함
+         - web.xml - PresentationLayer 설정은 DispatcherServlet 
+                     그 외는 ContextLoaderListner
+         - ContextLoaderListner와 DispatcherServlet은 각각 ApplicationContext를 생성함
+           ContextLoaderListner가 생성하는 ApplicationContext가 root컨텍스트가 되고
+           DispatcherServlet이 생성한 인스턴스는 root컨텍스트의 자식이 됨
+           
+         
+     
+      
+    
+            
+          
+          
+          
           
         
            
